@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>This is Demo01</title>
+    <!--下面的js库是有顺序的-->
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
 </head>
 <body>
+    <div id="demo01"></div>
+    <script type="text/babel">
+        let word = [
+            <h5 key="1">a</h5>,
+            <h5 key="2">b</h5>,
+            <h5 key="3">c</h5>
+        ];
+        var arr = ['d', 'e', 'f'];
+        ReactDOM.render (
+            <ol>
+                <div>
+                {
+                    arr.map(function (name, index) {
+                        return <div key={index}> {name}</div>
+                    })
+                }
+                </div>
+                <div>{word}</div>
+            </ol>,
+            document.getElementById('demo01')
+        )
+    </script>
 
 </body>
 </html>
