@@ -9,6 +9,9 @@
 <body>
     <div id="propstest"></div>
     <script type="text/babel">
+        // 组件类的第一个字母必须大写
+        // 所有组件类都必须有自己的 render 方法，用于输出组件。注意，组件类的第一个字母必须大写，否则会报错，
+        // 比如Message不能写成message。另外，组件类只能包含一个顶层标签，否则也会报错。
         var Message = React.createClass({
             render: function () {
                 return <h1>Hello {this.props.name} !</h1>

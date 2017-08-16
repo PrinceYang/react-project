@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="propTypesTest"></div>
+    <script type="text/babel">
+        var data = 123;
+        var MyTitle = React.createClass({
+            // PropTypes组件的属性可以接受任意值，字符串、对象、函数等等都可以。
+            // 有时，我们需要一种机制，验证别人使用组件时，提供的参数是否符合要求。
+            // 下面两个proptype 注意区分大小写
+            propTypes: {
+                title: React.PropTypes.string.isRequired,
+            },
+            /*
+           * 此外，getDefaultProps 方法可以用来设置组件属性的默认值
+           * var MyTitle = React.createClass({
+           * getDefaultProps : function () {
+           * return {
+           * title : 'Hello World'
+           * };
+           * },
+           * })
+           * 将会输出 Hello world
+           */
+            render: function () {
+                return <h1> {this.props.title} </h1>;
+            }
+        });
+        ReactDOM.render(
+            // 上面的Mytitle组件有一个title属性。
+            // PropTypes 告诉 React，这个 title 属性是必须的，而且它的值必须是字符串。
+            // 如果上面定义的 data = 123 那么查看浏览器的控制器 将会报错，类型不匹配
+            <MyTitle title={data}/>,
+            document.getElementById('propTypesTest')
+        );
+    </script>
+</body>
+</html>
