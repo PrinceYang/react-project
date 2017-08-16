@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is this.props.children property</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="childrenTest"></div>
+    <script type="text/babel">
+        var ChildrenProperty = React.createClass({
+            render: function () {
+                return (
+                    <ol>{
+                        React.Children.map(this.props.children, function (child) {
+                            return <li>{child}</li>
+                        })
+                    }
+                    </ol>
+                )
+            }
+        });
+        ReactDOM.render(
+            <ChildrenProperty>
+                <span>hehe1</span>
+                <span>hehe2</span>
+            </ChildrenProperty>,
+            document.getElementById('childrenTest')
+        )
+
+    </script>
+</body>
+</html>

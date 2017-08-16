@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
 </head>
 <body>
+    <div id="propstest"></div>
+    <script type="text/babel">
+        var Message = React.createClass({
+            render: function () {
+                return <h1>Hello {this.props.name} !</h1>
+            }
+        });
 
+        ReactDOM.render(
+            <Message name="John"/>,
+            document.getElementById('propstest')
+        )
+    </script>
 </body>
 </html>
