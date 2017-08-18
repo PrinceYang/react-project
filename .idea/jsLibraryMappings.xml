@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{babel-code-frame-DefinitelyTyped, babel-plugin-syntax-jsx-DefinitelyTyped, babel-template-DefinitelyTyped, react-DefinitelyTyped, react-highlight-words-DefinitelyTyped, react-native-DefinitelyTyped, react-project}" />
+  </component>
+</project>
